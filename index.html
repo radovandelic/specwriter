@@ -46,12 +46,12 @@
 				text = "";
 				for (var key in objects) {
 					text += objects[key]["name"] + ": object <br>";
-					text += "&nbsp;&nbsp; properties: " + Object.keys(objects[key]).length + "<br>";
+					text += "&nbsp;&nbsp; properties: " + Object.keys(objects[key]["properties"]).length + "<br>";
 					for (var prop in objects[key]["properties"]) {
 						var init = objects[key]["properties"][prop]["initialized"];
-						text += "&nbsp;&nbsp;&nbsp;&nbsp;" + objects[key]["properties"][prop]["name"] + ": " + (!isNaN(init) ? "number" : (init == "" ? "null" : typeof (init))) + "<br>";
-						text += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialized: " + objects[key]["properties"][prop]["initialized"] + "<br>";
-						text += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;purpose: " + objects[key]["properties"][prop]["purpose"] + "<br>";
+						text += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + objects[key]["properties"][prop]["name"] + ": " + (!isNaN(init) ? "number" : (init == "" ? "null" : typeof (init))) + "<br>";
+						text += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initialized: " + objects[key]["properties"][prop]["initialized"] + "<br>";
+						text += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;purpose: " + objects[key]["properties"][prop]["purpose"] + "<br>";
 					}
 				}
 				node.innerHTML = text;
